@@ -32,7 +32,7 @@ function App() {
         {' '}
         {domo.color}
       </h2>
-      <img src="/assets/img/domoFace.jpeg" alt="domo face" className="domoFace" />
+      <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
     </div>
   );
 }

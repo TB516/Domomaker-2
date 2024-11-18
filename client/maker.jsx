@@ -80,7 +80,7 @@ function DomoList({ pdomos, reloadDomos }) {
     // eslint-disable-next-line max-len
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div key={domo.id} className="domo" onClick={() => { routeDomoPage(domo.name); }}>
-      <img src="/assets/img/domoFace.jpeg" alt="domo face" className="domoFace" />
+      <img src="/assets/img/domoface.jpeg" alt="domo face" className="domoFace" />
       <h3 className="domoName">
         Name:
         {domo.name}
