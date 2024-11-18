@@ -57,6 +57,5 @@ redisClient.connect().then(() => {
   app.listen(port, (e) => {
     if (e) throw e;
     console.log(`Listening on port ${port}`);
-    console.log(process.env.NODE_ENV);
   });
 });

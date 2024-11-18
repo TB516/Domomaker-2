@@ -20,7 +20,6 @@ const requiresSecure = (req, res, next) => {
 };
 
 const bypassSecure = (req, res, next) => {
-  console.log('bypassing');
   next();
 };
 

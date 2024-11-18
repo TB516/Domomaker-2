@@ -1,8 +1,10 @@
 {
-  "extends": "airbnb/base",
+  "extends": "airbnb",
   "rules": {
     "no-underscore-dangle": "off",
     "no-plusplus": "off",
-    "import/extensions": "off"
-  }
+    "import/extensions": "off",
+    "react/prop-types": "warn",
+    "jsx-a11y/label-has-associated-control": "warn"
+  },
 }
