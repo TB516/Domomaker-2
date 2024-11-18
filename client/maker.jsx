@@ -72,8 +72,14 @@ function DomoList({ pdomos, reloadDomos }) {
     );
   }
 
+  const routeDomoPage = (name) => {
+    window.open(`/domo/${name}`);
+  };
+
   const domoNodes = domos.map((domo) => (
-    <div key={domo.id} className="domo">
+    // eslint-disable-next-line max-len
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+    <div key={domo.id} className="domo" onClick={() => { routeDomoPage(domo.name); }}>
       <img src="/assets/img/domoFace.jpeg" alt="domo face" className="domoFace" />
       <h3 className="domoName">
         Name:

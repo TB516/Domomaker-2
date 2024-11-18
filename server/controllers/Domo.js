@@ -41,8 +41,21 @@ const getDomos = async (req, res) => {
   }
 };
 
+const getDomoPage = async (req, res) => {
+  try {
+    const query = { owner: req.session.account._id, name: req.params.domo };
+    const doc = await Domo.findOne(query).select('name age color').lean().exec();
+
+    return res.render('domo', { domo: doc });
+  } catch (e) {
+    console.log(e);
+    return res.status(500).json({ error: 'Error retrieving domo!' });
+  }
+};
+
 module.exports = {
   makerPage,
   makeDomo,
   getDomos,
+  getDomoPage,
 };

@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  {{#if domo}}
+    <title>{{domo.name}}</title>
+  {{else}}
+    <title>Missing Domo</title>
+  {{/if}}
+  
+  <link rel="shortcut icon" href="/assets/img/favicon.png"/>
+  <link rel="stylesheet" type="text/css" href="/assets/style.css"/>
+</head>
+<body>
+  <nav><a href="/login"><img id="logo" src="/assets/img/face.png" alt="face logo"/></a>
+    <div class="navlink"><a href="/logout">Log out</a></div>
+  </nav>
+
+  {{#if domo}}
+    <section id="app" data-domo-name="{{domo.name}}" data-domo-age="{{domo.age}}" data-domo-color="{{domo.color}}">
+
+    </section>
+  {{else}}
+    <h1>No Domo Found!</h1>
+  {{/if}}
+
+  <script src="/assets/domoBundle.js"></script>
+</body>
+</html>
