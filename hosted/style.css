@@ -50,7 +50,7 @@ nav:nth-child(1) {
 .domoForm {
     border: 2px solid #338acc;
     height: 35px;
-    width: 700px;
+    width: 950px;
     margin-top:0px;
     padding-top:10px;
     background-color: #55acee;
@@ -58,8 +58,12 @@ nav:nth-child(1) {
     border-top-right-radius: 4px;
 }
 
-.domoForm label {
+.domoForm .inputGroup{
     display: inline-block;
+    margin: auto;
+}
+
+.domoForm label {
     width: 75px;
     margin-left: 10px;
     font-size: 1.2em;
@@ -67,7 +71,7 @@ nav:nth-child(1) {
     color: white;
 }
 
-.domoForm input[type=text] {
+.domoForm .inputGroup input{
     float:left;
 }
 
@@ -79,6 +83,9 @@ nav:nth-child(1) {
     border-radius: 2px;
     color: white;
     text-decoration: none;
+    
+    margin-right: 35px;
+    float: right;
 }
 
 .makeDomoSubmit:link, .makeDomoSubmit:visited, .makeDomoSubmit:hover, .makeDomoSubmit:active {

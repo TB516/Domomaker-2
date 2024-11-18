@@ -11,13 +11,14 @@ const handleDomo = (e, onDomoAdded) => {
 
   const name = e.target.querySelector('#domoName').value;
   const age = e.target.querySelector('#domoAge').value;
+  const color = e.target.querySelector('#domoColor').value;
 
   if (!name || !age) {
     helper.handleError('All fields are required');
     return false;
   }
 
-  helper.sendPost(e.target.action, { name, age }, onDomoAdded);
+  helper.sendPost(e.target.action, { name, age, color }, onDomoAdded);
   return false;
 };
 
@@ -31,16 +32,26 @@ function DomoForm({ triggerReload }) {
       method="POST"
       className="domoForm"
     >
-      <label htmlFor="name">Name: </label>
-      <input id="domoName" type="text" name="name" placeholder="Domo Name" />
+      <div className="inputGroup">
+        <label htmlFor="name">Name: </label>
+        <input id="domoName" type="text" name="name" placeholder="Domo Name" />
+      </div>
 
-      <label htmlFor="age">Age: </label>
-      <input id="domoAge" type="number" min="0" name="name" />
+      <div className="inputGroup">
+        <label htmlFor="age">Age: </label>
+        <input id="domoAge" type="number" min="0" name="name" />
+      </div>
+
+      <div className="inputGroup">
+        <label htmlFor="color">Color: </label>
+        <input id="domoColor" type="text" name="color" defaultValue="Brown" />
+      </div>
 
       <input className="makeDomoSubmit" type="submit" value="Make Domo" />
     </form>
   );
 }
+
 function DomoList({ pdomos, reloadDomos }) {
   const [domos, setDomos] = useState(pdomos);
 
@@ -71,6 +82,10 @@ function DomoList({ pdomos, reloadDomos }) {
       <h3 className="domoAge">
         Age:
         {domo.age}
+      </h3>
+      <h3 className="domoColor">
+        Color:
+        {domo.color}
       </h3>
     </div>
   ));
